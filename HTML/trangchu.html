@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trang web bán quần áo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      display: flex;
+      background-color: #333;
+      color: rgb(177, 177, 177);
+      padding: 70px;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-image:  url(https://thuthuatnhanh.com/wp-content/uploads/2022/01/background-vu-tru-ao-dep-nhat-800x571.jpg) ;
+    }
+    header img {
+      width: 70px;
+    }
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+    }
+    
+    section {
+      padding: 20px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <a href="trangchu.html"><img src="https://th.bing.com/th/id/OIG.q.Ue1UPYEwmqovCfhVhW?pid=ImgGn" alt=""></a>
+    </div>
+    <h1>T Shop</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#">Trang chủ</a></li>
+      <li><a href="#">Sản phẩm</a></li>
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <h2>Sản phẩm mới</h2>
+    <div class="product">
+      <img width="200" height="200"src="https://localhouze.com/wp-content/uploads/2022/11/Ao-khoac-hoodie-flexible-toi-gian-mau-xam-2.jpg" alt="Quần áo 1">
+      <h3>ÁO KHOÁC HOODIE FORM RỘNG </h3>
+      <p>Giá: $19.99</p>
+      <button onclick="addToCart('Tên sản phẩm 1', 19.99)">Mua ngay</button>
+    </div>
+    <div class="product">
+      <img width="200" height="200"src="https://xtee.vn/wp-content/uploads/2022/01/BST119X-800x800.jpg" alt="Quần áo 2">
+      <h3>ÁO THUN POLO LOCAL BRAND NAVY BST119X</h3>
+      <p>Giá: $24.99</p>
+      <button onclick="addToCart('Tên sản phẩm 2', 24.99)">Mua ngay</button>
+    </div>
+    <!-- Thêm các sản phẩm khác tại đây -->
+  </section>
+  <section>
+    <h2>Sản phẩm bán chạy</h2>
+    <div class="product">
+      <img width="200" height="200"src="https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-4-black-3-ZiZoou-Store.jpg?v=1646665216" alt="Quần áo 3">
+      <h3>QUẦN JOGGER TÚI HỘP NAM NỮ</h3>
+      <p>Giá: $29.99</p>
+      <button onclick="addToCart('Tên sản phẩm 3', 29.99)">Thêm vào giỏ hàng</button>
+    </div>
+    <!-- Thêm các sản phẩm chi tiết khác tại đây -->
+
+  <section class="product-list">
+    <div class="product">
+      <img width="200" height="200"src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSmAcsuxTLUxmuBpl0U83eVgAlETF0nqNBG7_VBtAkfCc6xGgaeFyP5jtYXZFK7Nw20sAPjOqBUPb9Q1Y6erh-gNCOgumh83cK-HWB_Gaw&usqp=CAE" alt="Quần áo 4">
+      <h3>ÁO KHOÁC MADEN</h3>
+      <p>Giá: $39.99</p>
+      <button onclick="addToCart('Tên sản phẩm 4', 39.99)">Mua ngay</button>
+    </div>
+    <div class="product">
+      <img width="200" height="200"src="https://cbu01.alicdn.com/img/ibank/2020/494/683/22952386494_1031906330.jpg" alt="Quần áo 5">
+      <h3>ĐỒ BỘ NAM SHRYUO CẢ BỘ 3 MÓN</h3>
+      <p>Giá: $49.99</p>
+      <button onclick="addToCart('Tên sản phẩm 5', 49.99)">Mua ngay</button>
+    </div>
+    <!-- Thêm các sản phẩm chi tiết khác tại đây -->
+  </section>
+  
+  </section>
+  <section class="about">
+    <h2>Giới thiệu</h2>
+    <p>Chào mừng đến với T Shop! Chúng tôi cung cấp một loạt các sản phẩm thời trang phong phú và đa dạng. Với chất lượng tuyệt vời và giá cả hợp lý, chúng tôi hy vọng sẽ đem đến sự hài lòng cho khách hàng.</p>
+  </section>
+  <!-- Phần sau -->
+  <footer>
+    <p>Bản quyền &copy; 2023 Trang web bán quần áo</p>
+  </footer>
+  <script>
+    function addToCart(productName, price) {
+      var cartItems = document.getElementById("cart-items");
+      var newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${productName}</td>
+        <td>$${price.toFixed(2)}</td>
+        <td><button onclick="removeFromCart(this)">Xóa</button></td>
+      `;
+      cartItems.appendChild(newRow);
+    }
+
+    function removeFromCart(button) {
+      var row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  </script>
+</body>
+</html>
+```
